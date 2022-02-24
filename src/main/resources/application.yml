@@ -4,19 +4,33 @@
 #management.endpoint.health.show-details=always
 
 spring:
-  security:
-    user:
-      name: admin
-      password: 123456
   application:
-    name: oauth2-demo
+    name: oauth-center
   datasource:
-    url: jdbc:mysql://localhost:3306/activiti?characterEncoding=utf-8&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/OAUTH2?characterEncoding=utf-8&serverTimezone=UTC
     username: root
     password: 123456
-    driverClassName: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
 #spring.datasource.type = com.zaxxer.hikari.HikariDataSource
-#spring.main.allow-bean-definition-overriding =  true
+  main:
+    allow-bean-definition-overriding: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    database: 0
+    lettuce:
+      pool:
+        max-active: 32
+        max-wait: 300ms
+        max-idle: 16
+        min-idle: 8
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 500
+        min-idle: 0
 
 server:
   port: 8081
@@ -24,9 +38,8 @@ server:
 #eureka.client.service-url.defaultZone=http://localhost:7000/eureka/
 
 mybatis:
-  mapperLocations: classpath:mapper/*.xml
+  mapper-locations: classpath:mapper/*.xml
 # mapper.xml实体类不用写全路径类名
-#  type-aliases-package: gxj.study.dal.entity
-
+  type-aliases-package: pers.gxj.security.oauth2.framework.*.entity.dao
 
 
