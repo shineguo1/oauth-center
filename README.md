@@ -14,7 +14,7 @@
 |3. |完成oauth2配置工作||
 |   |引入redis|100%|
 |   |创建数据表（客户端表、access_token表、refresh_token表）|100%|
-|   |ResourceServerConfigurerAdapter(资源服务配置)|90%|
+|   |ResourceServerConfigurerAdapter(资源服务配置)|100%|
 |   |AuthorizationServerConfigurerAdapter(授权服务配置)|100%|
 |   |ClientDetailsService JDBC配置|100%|
 |   |grant_token存储功能(AuthorizationCodeService, redis实现)|100%|
@@ -36,7 +36,7 @@
 |   |功能点：用户取消授权|0%|
 |   |oauth2-provider多数据源实现并用（代理+责任链模式）|100%|
 |   |实现jwt登录|0%|
-|   |抽象出可插拔的模块/接口，最终目标是抽象出一个jar包依赖|0%|
+|   |抽象出可插拔的模块/接口，能不能抽象出一个jar依赖?|0%|
 |扩展性|超出demo演示范围的功能，未来改进方向：||
 |i. |各类查询添加缓存||
 |ii.|sharding分库分表||
